@@ -39,7 +39,6 @@ class HomePage extends Component {
         const genderOpts = gender.map(item => <Option value={item.value}>{item.label}</Option>)
         return (
             <Form onSubmit={this.handleSubmit.bind(this)} className="p20">
-              <BoilingVerdict/>
                 <CollPanel title="基本信息" fold={false}>
                     <FormItem {...formItemLayout} label="名称">
                         {getFieldDecorator('name', {

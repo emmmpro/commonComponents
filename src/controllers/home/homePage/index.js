@@ -5,7 +5,6 @@ import DynamicParams from '../../commonComponent/dynamicForm'
 import CollPanel from '../../commonComponent/collPanel'
 import DescriptionList from 'ant-design-pro/lib/DescriptionList'
 import './style'
-import BoilingVerdict from './demo'
 
 const FormItem = Form.Item
 const Option = Select.Option

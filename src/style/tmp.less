@@ -1,0 +1,234 @@
+/*根节点*/
+#root{height: 100%;background: @body-background;}
+/*加载中*/
+#_loading{position: fixed;width: 100%;height: 100%;top: 0;z-index: 9999;
+   .loading-mask{position: fixed;width:100%;height: 100%;background: @black;opacity: .5;}
+   .loading-box{position: absolute;left: 50%;margin-left: -100px;opacity: .95;width: 200px;height: 200px;border-radius: 20px;top: 50%;margin-top: -110px;background-color: rgba(0,0,0,.7);
+    .loading-content {position: absolute;width: 80px;height: 80px;margin-top: -40px;margin-left: -40px;border: 5px dotted @white;opacity: .5;top: 50%;left: 50%;border-radius: 120px;}
+    .animate-spin {-webkit-animation-duration: 3s;-webkit-animation-name: spin;-webkit-animation-timing-function: linear;-webkit-animation-iteration-count: infinite;}
+    .loading-content-outer {position: absolute;width: 120px;height: 120px;border: 2px solid rgba(255,255,255,.2);border-left-color: transparent;border-right-color: transparent;top: 50%;left: 50%;margin-left: -60px;margin-top: -60px;border-radius: 180px;}
+   .animate-spin-outer {-webkit-animation-duration: 1.5s;-webkit-animation-name: spin;-webkit-animation-timing-function: linear;-webkit-animation-iteration-count: infinite;}
+   .text {position: absolute;color: @white;top: 50%;margin-top: -10px;width: 100%;opacity: .8;line-height: 20px;font-size: 15px;text-align: center;}
+    @keyframes spin{
+      0% {-webkit-transform: rotate(0);}
+      50% {-webkit-transform: rotate(180deg);}
+      100% {-webkit-transform: rotate(359deg);}
+      }
+    }
+}
+/*logo*/
+.logo {float: left;width: 68px;height: 77px;background: url(../images/logo.png) center no-repeat;background-color: inherit;background-size: 55%;}
+
+/*中间内容*/
+.main-content {position: relative;overflow: auto;overflow-x: hidden; margin: 22px 0 0 16px;padding: 5px;background: @white;
+  .content-header {position: fixed;width: 100%;top:58px;padding: 0 20px 0 0;height: 40px;line-height: 40px;background-color: #f0f2f5;z-index: 500;}
+  .backup{position:fixed;top:64px;right:23px;}
+  .panel{border:0;}
+}
+
+/*语言*/
+// .ant-select-dropdown-menu{
+//   .lableLan{top: 11px;}
+// }
+// .lableLan{display: block;width: 16px;position: absolute;top: 10px;height: 11px;}
+// .language{
+//   span{margin-left: 20px;}
+// }
+// .cn-language{background: url(../images/cn.png) center no-repeat;}
+// .us-language{background: url(../images/us.png) center no-repeat;}
+
+/*工具样式*/
+.toolBar {margin: 10px 0;position: relative;
+  [class*='ant-col'] {margin-bottom: 10px;}
+}
+/*antd组件样式修改*/
+.ant-tooltip-inner{word-wrap: break-word;}
+/*antd的Popover样式修改*/
+.ant-popover-placement-top{z-index:1000;}
+/*antd的Tabs样式修改*/
+.ant-tabs-bar{z-index:498 !important;}
+/*ant-breadcrumb路由居中*/
+.ant-breadcrumb{line-height:37px;}
+/*管控模块控制*/
+.admin{
+  .ant-menu-submenu{
+    &>ul{max-height:300px;overflow-y: auto;}
+  }
+}
+.button-list{
+  .ant-form-item-control-wrapper{text-align:right;}
+  .ant-form-item-control{line-height:26px !important;}
+}
+/*update btn css*/
+.opt-btn{
+  i{margin-right:5px;cursor:pointer;}
+}
+.opt-header{
+  i{margin-left:5px;cursor:pointer;}
+}
+.cmdb{
+  .bg-delete{margin-left:5px;}
+}
+ /*控制弹出框内容的高度*/
+.ant-modal-cmdb-content{max-height: 500px;overflow: auto;} 
+.add-host{
+  .ant-tabs-tab{background:@white!important;border-color:@white!important;}
+  .ant-tabs-tab-active{border-color:@ddd!important;border-bottom:1px solid @white !important;}
+}
+/*查看主机信息*/
+.look-host-message{
+  .ant-row{margin-top:20px;}
+  b{margin-right:5px;}
+}
+.ant-layout{overflow-y:hidden;}
+/*展示主机图样式*/
+.circle{margin: 5px 0 20px;width: 33.3333%;float: left;
+  .circle-link{width: 220px;height: 220px;display: block;margin: 0 auto;}
+  .circle-container{background: @white;width: 220px;height: 220px;border-radius: 100%;padding: 35px;position: relative;
+    &:before{width: 220px;height: 220px;display: block;content: "";border-radius: 100%;background: url(../images/business.png) no-repeat 0 0;background-size: 100% 100%;position: absolute;left: 0;top: 0;-webkit-animation: animation-rotate 6s infinite linear;animation: animation-rotate 6s infinite linear;z-index: 0;}
+    .circle-owner{background: @host-title-bg-color;color: @host-content-bg-color;min-width:152px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;line-height: 30px;height: 30px;border-radius: 15px;padding: 0 15px;margin-bottom: 8px;text-align:center;}
+    .circle-child{background: @host-content-bg-color;color: @white;min-width:152px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;line-height: 30px;height: 30px;border-radius: 15px;padding: 0 15px;margin-bottom: 8px;font-size:13px;}
+  }
+  .circle-btn{width: 220px;display: block;margin: 0 auto;margin-top: 10px;text-align: center;}
+}
+/*自动安装*/
+.auto-entry{
+  .agent-text{line-height:25px;color:@gray;}
+}
+.table-ftw{height: 100%;width: 100%;display: flex;flex-direction: column;
+  .tr-ftw{display:flex;flex: auto;background-color: @white;
+    .td-ftw{overflow-y: auto;overflow-x: hidden;}
+  }
+  /*没有应用的css*/
+  .no-app{min-height:463px;
+    .app-tips{position:absolute;top:50%;left:0;right:0;text-align:center;margin-top:-25.7px;
+       p{margin-bottom:5px;color:rgba(0,0,0,.43);font-size: 12px;}
+    }
+  }
+}
+.inner-menu{position:fixed;top:100px;height:calc(~"100% - 147px");width: @left-slider;background-color: @white;border-right:1px solid #ccc;
+    .toolBar{text-align: center;}
+    .ant-menu{background-color: inherit;border-right: 1px solid @white;}
+    .ant-menu-submenu-active{
+      .ant-menu-submenu-title{background-color:inherit;color:@dark-gray;}
+    }
+    .ant-menu-item-active{color:@dark-gray;background-color: inherit;}
+    .ant-menu-item{
+      span{display: block;overflow: hidden;text-overflow: ellipsis;}
+    }
+    .ant-menu-item-selected{background-color:@white !important;color:#26a69a;border-right: 1px solid @lightGreen;
+      i.setting{position: absolute;right: 0;top: 0;line-height:42px;}
+    }
+}
+.model-content{flex:1;margin-left: @left-slider;background: @white;}
+/*关联app的css*/
+.associate-app{
+  .ant-tabs-bar{position: fixed;z-index:1000;width:calc(~"100% - 268px");background:@white; }
+}
+.inner-menus{position:fixed;width: @left-slider;background-color: @white;height: calc(~"100% - 216px");top:168px;border-right:1px solid @ccc;
+    .toolBar{text-align: center;}
+    .ant-menu{background-color: inherit;border-right: 1px solid @white;}
+    .ant-menu-submenu-active{
+      .ant-menu-submenu-title{background-color:inherit;color:@dark-gray;}
+    }
+    .ant-menu-item-active{color:@dark-gray;background-color: inherit;}
+    .ant-menu-item{
+      span{display: block;overflow: hidden;text-overflow: ellipsis;}
+    }
+    .ant-menu-item-selected{background-color:@white !important;color:@lightGreen;border-right: 1px solid @lightGreen;
+      i.setting{position: absolute;right: 0;top: 0;line-height:42px;}
+    }
+}
+.model-contents{flex:1;margin-left: @left-slider;z-index:499;background: @white;}
+/*****模型字段设置默认值*****/
+.set-default-val{
+  button{float:right;}
+  i{font-size:12px;}
+  span{margin-left:0!important;}
+  input{width:50%;}
+  li{
+    i{margin-left:10px;cursor: pointer;}
+  }
+}
+/*******集群展示的item*******/
+.cluster-item{width:50%;margin-bottom:20px;
+  .cluster-content{width: 80%;margin: 10px auto;}
+}
+.ani-cluster{position:relative;
+      .card{background:@white;border: 1px solid @ddd;height:420px;border-radius: 5px;font-size: 12px;position: relative;overflow: hidden;transition: all .3s;z-index: 1;
+            p{line-height:40px;text-align: center;background: rgba(38, 166, 154, 0.95);color:@white;}
+            .toolBar{position:absolute;width:100%;text-align:center;bottom:-4px;padding-top: 5px;border-top: 1px solid @ddd;
+               button{margin-left:5px;}
+            }
+            .ant-pagination{position:absolute;right:10px;bottom: -60px;}
+      }
+      &:before{position: absolute;content: "";width: 100%;height: 100%;display: block;z-index: 0;top: 0;left: 0;}
+      &:after{position: absolute;content: "";width: 100%;height: 100%;display: block;z-index: 0;top: 0;left: 0;}
+  }
+
+ /*用户基本信息*/
+ .info-wapper{margin: 30px 5%;
+  .info-box{margin-bottom: 12px;label{width: 120px;line-height: 20px;padding: 20px 0;text-align: center;background-color: #f3f5f7;color: #07111b;font-weight: 700;
+    }
+    div{width: 708px;margin-left: 8px;height: 61px;line-height: 20px;padding: 20px 0 20px 22px;border-bottom: 1px solid #d9dde1;}
+  }
+} 
+.ant-layout-sider-collapsed .anticon {font-size: 20px;}
+/*布局样式*/
+.containAll {position: absolute;top: 0;bottom: 0;left: 0;right: 0;
+    .github {position: absolute;top: 20px;left: 14px;font-size: 36px;animation: App-logo-spin infinite 20s linear;}
+    .author {position: absolute;top: 20px;left: 65px;font-size: 24px;font-weight: 600;font-family: "Microsoft YaHei","SimHei"}
+    .white {color: white}
+    .menu {height: 100%;padding-top: 75px;}
+    .switch {position: fixed;bottom: 2%;left: 8%;z-index:100;}
+}
+
+.ant-layout-sider-trigger {display: none;}
+
+.ant-menu-inline{border:0 !important;}
+
+//重构antd-tabs样式
+.ant-tabs{
+  font-family: "Roboto",Helvetica Neue,Helvetica,Arial,sans-serif !important;
+}
+//表单提示图标之前加边距
+.ant-row{
+  span{
+    i{margin-left: 2px;}
+  }
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.ant-layout-sider-collapsed .nav-text {
+  display: none;
+}
+
+.ant-menu-submenu-vertical > .ant-menu-submenu-title:after { // 对缩放时的menu样式进行处理
+    display: none;
+}
+
+.ant-menu-submenu-vertical .ant-menu-submenu-title span span {
+    display: none;
+}
+
+.ant-layout-sider-collapsed .author {
+    display: none;
+}
+
+/*左侧导航样式修改*/
+.ant-layout-sider-has-trigger{
+  padding-bottom: 0 !important;
+}
+.ant-layout-sider{
+  background: @white !important;
+}
+
+  @keyframes animation-rotate
+  {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(359deg);}
+  }
